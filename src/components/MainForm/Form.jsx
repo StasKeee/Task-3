@@ -3,13 +3,8 @@ import { useState } from "react";
 import InputForm from "../inputs/InputForm";
 import TextareaForm from "../textareas/TextareaForm";
 import ButtonSubmit from "../buttons/Button";
-import validation from "../Validation/validation";
-
-const defaultValue ={
-    name: '',
-    overview: '',
-    percent: ''
-}
+import validation from "../validation/validation";
+import { defaultValue } from "../constants/defaultValue";
 
 
 const Form = ({addCard}) => {

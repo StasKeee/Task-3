@@ -3,13 +3,8 @@ import { useState, useEffect } from "react";
 import InputForm from "../inputs/InputForm";
 import TextareaForm from "../textareas/TextareaForm";
 import Button from "../buttons/Button";
-import validation from "../Validation/validation";
-
-const defaultValue = {
-    name: '',
-    overview: '',
-    percent: ''
-}
+import validation from "../validation/validation";
+import { defaultValue } from "../constants/defaultValue";
 
 const ModalForm = ({card, closeModal, saveChanges}) => {
 
@@ -51,10 +46,12 @@ const ModalForm = ({card, closeModal, saveChanges}) => {
 
 
     return ( 
-        <form className={""} onSubmit={handleSubmitModal} >
-            <InputForm propsValue={stateModal.name} onChangeForm={onInputChange('name')} className={errors.name ? "active" : ""} placeholder={errors.name ? "Поле ввода не должно быть пустым" : "Название навыка"} />
-            <TextareaForm propsValue={stateModal.overview} onChangeForm={onInputChange('overview')} className={errors.overview ? "active" : ""} placeholder={errors.overview ? "Поле ввода не должно быть пустым" : "Описание навыка"} />
-            <InputForm propsValue={stateModal.percent} onChangeForm={onInputChange('percent')} className={errors.percent ? "active" : ""} placeholder={errors.percent ? "Значнеие от 0 до 100" : "Процент владения"} />
+        <form onSubmit={handleSubmitModal} >
+            <div className="modal_form">
+                <InputForm propsValue={stateModal.name} onChangeForm={onInputChange('name')} className={errors.name ? "active" : ""} placeholder={errors.name ? "Поле ввода не должно быть пустым" : "Название навыка"} />
+                <TextareaForm propsValue={stateModal.overview} onChangeForm={onInputChange('overview')} className={errors.overview ? "active" : ""} placeholder={errors.overview ? "Поле ввода не должно быть пустым" : "Описание навыка"} />
+                <InputForm propsValue={stateModal.percent} onChangeForm={onInputChange('percent')} className={errors.percent ? "active" : ""} placeholder={errors.percent ? "Значнеие от 0 до 100" : "Процент владения"} />
+            </div>
             <div className="btn_container">
                 <Button content={"Сохранить"} type={"submit"} />
                 <Button content={"Отмена"} onClick={closeModal} />
