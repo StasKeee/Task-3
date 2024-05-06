@@ -1,6 +1,6 @@
-const PercentList = ({stateList, onChangeList}) => {
+const PercentList = ({filterProp, changeFilterProp}) => {
     return ( 
-        <select className="selector" value={stateList} onChange={onChangeList}>
+        <select className="selector" value={filterProp} onChange={changeFilterProp}>
             <option disabled>Выберите уровень</option>
             <option value="all">Все</option>
             <option value="more">Компетенции с уровнем 50% и выше</option>

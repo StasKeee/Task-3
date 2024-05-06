@@ -9,7 +9,7 @@
 
 input {
   border: 1px solid #cccccc;
-  border-radius: 3px;
+  border-radius: 10px;
   background: #ffffff; 
   outline: none; 
   width: 250px; 
@@ -25,13 +25,12 @@ textarea {
   border-radius: 3px;
   background: #ffffff; 
   outline: none; 
-  width: 250px; 
   color: black; 
   font-size: 15px; 
   font-family: Tahoma;
   margin: 5px;
   min-height: 90px;
-  min-width: 450px;
+  min-width: 350px;
 }
 
 .active {
@@ -80,7 +79,8 @@ header {
 .form {
   display: flex;
   justify-content: center;
-  align-items: flex-start
+  align-items: flex-start;
+  margin-left: 100px;
 }
 
 .form__percent {

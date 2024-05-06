@@ -1,5 +1,5 @@
-import ButtonDelete from "./ButtonDelete";
-import ButtonRedactor from "./ButtonRedactor";
+import Button from "../buttons/Button";
+
 
 const CardMaker = ({obj, deleteProduct, openModal}) => {
     return ( 
@@ -10,8 +10,8 @@ const CardMaker = ({obj, deleteProduct, openModal}) => {
             <div className="card-sub">{obj.overview}</div>
             <div className="card-percent">{`Прогресс изучения ${obj.percent}%`}</div>
             <div className="btn-keeper">
-                <ButtonRedactor openModal={()=>{openModal(obj)}} />
-                <ButtonDelete deleteProduct={deleteProduct} id={obj.id} />
+                <Button content={"Редактировать"} onClick={()=>{openModal(obj)}} />
+                <Button content={"Удалить"} onClick={()=>{deleteProduct(obj.id)}}  />
             </div>
         </div>
     </div>
