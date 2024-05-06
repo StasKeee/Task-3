@@ -7,6 +7,7 @@ import { useLocalStorage } from './components/hooks/useLocalStorage';
 import CardContainer from './components/Card/CardContainer';
 import { useFilter } from './components/hooks/useFilter';
 import Filtration from './components/Filtration/Filtration';
+import { defaultValue } from './components/constants/defaultValue';
 
 
 function App() {
@@ -17,11 +18,7 @@ function App() {
 
   const [filterProp, setFilterProp, filteredCards] = useFilter(comps, "all");
 
-  const [cardToChange, setCardToChange] = useState({
-    name: '',
-    overview: '',
-    percent: 0
-  });
+  const [cardToChange, setCardToChange] = useState(defaultValue);
 
   const modalRef = useRef(null);
 
